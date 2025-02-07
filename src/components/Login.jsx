@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { login as authLogin } from '../store/authSlice'
@@ -16,6 +15,7 @@ function Login() {
     const login = async(data) => {
         setError("")
         try {
+            console.log(data);
             const session = await authService.login(data)
             if (session) {
                 const userData = await authService.getCurrentUser()
